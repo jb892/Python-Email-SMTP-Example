@@ -2,8 +2,8 @@
 Auto email sender example (smtp-stl).
 
 ### Prerequisites
-*[Python 3.X](https://www.python.org/) installed
-*(optional)[PycharmIDE](https://www.jetbrains.com/pycharm/) installed
+* [Python 3.X](https://www.python.org/) installed
+* (optional)[PycharmIDE](https://www.jetbrains.com/pycharm/) installed
 
 ## Running
 1. Edit the 'AutoEmailSender.py' file by Pycharm and fill in requested info such as email address, smtp server address and password.
