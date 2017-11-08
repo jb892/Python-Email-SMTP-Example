@@ -1,14 +1,19 @@
 # SMTP library 
 import smtplib
 
+# Enabling the program to format your email correctly.
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+# Enabling time stamp.
 import datetime
 
-# package enables us to read html file
+# Enabling us to read html file
 import codecs
 
+# Main function that handles sending emails via Outlook's smtp server.
+## Warning!!! Please find out the correct server address and port number from
+## your email service providers(e.g.: Gmail->smtp.gmail.com:587) before your try.
 def sendEmail(from_addr, to_addr_list, cc_addr_list,
               subject, message, login, password,
               smtpServer='smtp-mail.outlook.com:587'):
@@ -46,19 +51,25 @@ def sendEmail(from_addr, to_addr_list, cc_addr_list,
     print(problems)
     server.quit()
 
+#<-----------------Start of Demo Area--------------->#
 # provide basic info that you want to send.
-fromAddress = "***@***.com"
-toAddress = "***@***.com"
+fromAddress = "***@***.com" # Sender Email address.
+toAddress = "***@***.com" # Receivers' Email address.
 ccAddress = [] # doesnt work here.
 Subject = "Python email"
-f = codecs.open("Email.html", 'r')
+
+# Please store the content you want to send into the "Email.html" file.
+f = codecs.open("Email.html", 'r') 
 msg_body = f.read()
 print(msg_body)
 f.close()
+
+# Provide the name and password info that allow you login to the smtp server of your email services.
 login_name = "***@***.com"
 password = "******"
 
 sendEmail(fromAddress, toAddress, ccAddress, Subject, msg_body, login_name, password)
+#<-----------------End of Demo Area--------------->#
 
 
 
